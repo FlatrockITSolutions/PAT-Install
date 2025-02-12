@@ -12,7 +12,8 @@ if ls /usr/local/bin | grep -q PickAssistant.py; then
         echo "Pick Assistant is out of date; updating"
         sudo mv ~/PickAssistant.py /usr/local/bin/PickAssistant.py
         if cat ~/.zshrc | grep -q 'picklist'; then
-            echo "Pick Assistant Tool is ready to use."
+            source ~/.zshrc > /dev/null
+	    echo "Pick Assistant Tool is ready to use."
         else
             echo "alias picklist='python3 /usr/local/bin/PickAssistant.py'" >> ~/.zshrc
             source ~/.zshrc > /dev/null
@@ -22,6 +23,7 @@ if ls /usr/local/bin | grep -q PickAssistant.py; then
 else
     sudo mv ~/PickAssistant.py /usr/local/bin/PickAssistant.py
     if cat ~/.zshrc | grep -q 'picklist'; then
+    	source ~/.zshrc > /dev/null
         echo "Pick Assistant Tool is ready to use."
     else
         echo "alias picklist='python3 /usr/local/bin/PickAssistant.py'" >> ~/.zshrc
