@@ -31,3 +31,4 @@ else
         echo "Pick Assistant Tool is ready to use"
     fi
 fi
+echo "Template: picklist"
